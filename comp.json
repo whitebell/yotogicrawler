@@ -1,0 +1,192 @@
+{
+	"comp1" : {
+		"uri"      : "http://yotogi.com/comp/comp1/",
+		"cache"    : "comp1.json",
+		"dir"      : "comp1",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"update"   : "./td[4]/text()",
+			"comments" : "./td[5]/text()"
+		}
+	},
+	"comp2" : {
+		"uri"      : "http://yotogi.com/comp/comp2/",
+		"cache"    : "comp2.json",
+		"dir"      : "comp2",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"update"   : "./td[4]/text()",
+			"comments" : "./td[5]/text()"
+		}
+	},
+	"comp3" : {
+		"uri"      : "http://yotogi.com/comp/comp3/",
+		"cache"    : "comp3.json",
+		"dir"      : "comp3",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[2]/a/text()",
+			"path"     : "./td[2]/a/@href",
+			"author"   : "./td[3]/text()",
+			"posting"  : "./td[4]/text()",
+			"update"   : "./td[5]/text()",
+			"comments" : "./td[6]/text()"
+		}
+	},
+	"comp4" : {
+		"uri"      : "http://yotogi.com/comp/comp4/",
+		"cache"    : "comp4.json",
+		"dir"      : "comp4",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[2]/a/text()",
+			"path"     : "./td[2]/a/@href",
+			"author"   : "./td[3]/text()",
+			"posting"  : "./td[4]/text()",
+			"update"   : "./td[5]/text()",
+			"comments" : "./td[6]/text()"
+		}
+	},
+	"comp5" : {
+		"uri"      : "http://yotogi.com/comp/comp5/",
+		"cache"    : "comp5.json",
+		"dir"      : "comp5",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"update"   : "./td[4]/text()",
+			"comments" : "./td[5]/text()"
+		}
+	},
+	"comp6" : {
+		"uri"      : "http://yotogi.com/comp/comp6/",
+		"cache"    : "comp6.json",
+		"dir"      : "comp6",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"update"   : "./td[4]/text()",
+			"comments" : "./td[5]/text()"
+		}
+	},
+	"comp7" : {
+		"uri"      : "http://yotogi.com/comp/comp7/",
+		"cache"    : "comp7.json",
+		"dir"      : "comp7",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[2]/a/text()",
+			"path"     : "./td[2]/a/@href",
+			"author"   : "./td[3]/text()",
+			"posting"  : "./td[4]/text()",
+			"comments" : "./td[5]/text()"
+		}
+	},
+	"comp8" : {
+		"uri"      : "http://yotogi.com/comp/comp8/",
+		"cache"    : "comp8.json",
+		"dir"      : "comp8",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[2]/a/text()",
+			"path"     : "./td[2]/a/@href",
+			"author"   : "./td[3]/text()",
+			"posting"  : "./td[4]/text()",
+			"comments" : "./td[5]/text()"
+		}
+	},
+	"comp9" : {
+		"uri"      : "http://yotogi.com/comp/comp9/",
+		"cache"    : "comp9.json",
+		"dir"      : "comp9",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"comments" : "./td[4]/text()"
+		}
+	},
+	"comp10" : {
+		"uri"      : "http://yotogi.com/comp/comp10/",
+		"cache"    : "comp10.json",
+		"dir"      : "comp10",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"comments" : "./td[4]/text()"
+		}
+	},
+	"comp11" : {
+		"uri"      : "http://yotogi.com/comp/comp11/",
+		"cache"    : "comp11.json",
+		"dir"      : "comp11",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"comments" : "./td[4]/text()"
+		}
+	},
+	"comp12" : {
+		"uri"      : "http://yotogi.com/comp/comp12/",
+		"cache"    : "comp12.json",
+		"dir"      : "comp12",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[@class='title']/a/text()",
+			"path"     : "./td[@class='title']/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"comments" : "./td[4]/text()"
+		}
+	},
+	"comp13" : {
+		"uri"      : "http://yotogi.com/comp/comp13/",
+		"cache"    : "comp13.json",
+		"dir"      : "comp13",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"update"   : "./td[4]/text()",
+			"comments" : "./td[5]/text()"
+		}
+	},
+	"comp14" : {
+		"uri"      : "http://yotogi.com/comp/comp14/",
+		"cache"    : "comp14.json",
+		"dir"      : "comp14",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"update"   : "./td[4]/text()",
+			"comments" : "./td[5]/text()"
+		}
+	}
+}
