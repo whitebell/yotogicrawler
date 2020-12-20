@@ -1,33 +1,33 @@
 # yotogicrawler
 
-## ��
+## 何
 
-�����鉾�b�Ƃ˂��傱��̍�i��������B
+東方夜伽話とねちょこんの作品回収するやつ。
 
-## �K�v�Ȃ��̂Ǝg����
+## 必要なものと使い方
 
-- Perl�����n
+- Perl処理系
 
-Windows�Ȃ�[Strawberry Perl](https://strawberryperl.com/)�B����OS�Ȃ玩���łǂ��ɂ����āB*nix�n�Ȃ炾�����������Ă�C�����邯�ǁB
-�����W���œ����ĂȂ����W���[���g���Ă�̂ŁA��������Ȃ�������^�[�~�i����
+Windowsなら[Strawberry Perl](https://strawberryperl.com/)。他のOSなら自分でどうにかして。*nix系ならだいたい入ってる気もするけど。
+多分標準で入ってないモジュール使ってるので、何か足りなかったらターミナルで
 
 ```shell
 cpan install HTML::TreeBuilder::XPath
 ```
 
-�Ƃ����ăC���X�g�[�����邱�ƁB
+とかしてインストールすること。
 
-���Ƃ�
+あとは
 
 ```shell
 perl yotogi.pl
 perl comp.pl
 ```
 
-�őS��������܂��Bcomp1�`14.json, cache.json �͍X�V�m�F�p�̃L���b�V���Ȃ̂ō폜���Ȃ����ƁB�X�V������Γ����R�}���h���s���Ă��΃L���b�V���m�F������ŐV�K�E�X�V��i����������܂��B
+で全部回収します。comp1～14.json, cache.json は更新確認用のキャッシュなので削除しないこと。更新があれば同じコマンド実行してやればキャッシュ確認した上で新規・更新作品だけ回収します。
 
-�鉾�b������Ƀ^�[�~�i����������������Ȃ� yotogi.json �� `term_encoding` ��ς��Ă݂�Ƃ��������BWindows�Ȃ� `cp932`�A���Ƃ� `utf8` �Ƃ��B�Â�Linux���� `eucjp` �Ƃ��܂����邩������Ȃ����ǁB
+夜伽話回収時にターミナルが文字化けするなら yotogi.json の `term_encoding` を変えてみるといいかも。Windowsなら `cp932`、あとは `utf8` とか。古いLinuxだと `eucjp` とかまだあるかもしれないけど。
 
 ## License
 
-MIT�B
+MIT。
