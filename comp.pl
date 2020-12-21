@@ -4,16 +4,16 @@ use strict;
 use warnings;
 use utf8;
 use 5.32.0;
-use version; our $VERSION = version->declare('v1.0.1');
+use version; our $VERSION = version->declare('v1.0.2');
 
 use Encode qw/encode decode/;
 use File::Slurp qw/read_file/;
 use HTML::TreeBuilder::XPath;
 use HTTP::Cookies;
-use JSON::XS qw/encode_json decode_json/;
+use JSON::XS qw/decode_json/;
 use LWP::UserAgent;
 
-my $conf = -e 'D:/usr/config.json' ? decode_json(read_file('D:/usr/config.json')) : {};
+my $conf = decode_json(read_file('config.json'));
 my $comp = decode_json(read_file('comp.json'));
 
 my $ua = LWP::UserAgent->new(
