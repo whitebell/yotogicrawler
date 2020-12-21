@@ -13,7 +13,7 @@ use HTTP::Cookies;
 use JSON::XS qw/encode_json decode_json/;
 use LWP::UserAgent;
 
-my $conf = decode_json(read_file('D:/usr/config.json'));
+my $conf = -e 'D:/usr/config.json' ? decode_json(read_file('D:/usr/config.json')) : {};
 my $comp = decode_json(read_file('comp.json'));
 
 my $ua = LWP::UserAgent->new(
