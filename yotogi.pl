@@ -59,7 +59,7 @@ do {
             $subject = $row->{subject};
 
             if (exists $cache->{$path}) {
-                if ($cache->{$path}{title} ne $title or $cache->{$path}{comments} ne $comments or $cache->{$path}{update} ne $update) {
+                if ($cache->{$path}{title} ne $title || $cache->{$path}{comments} ne $comments || $cache->{$path}{update} ne $update) {
                     say encode($tenc, $title), "[$subject, $key] Update";
                     sleep 5;
                     mkdir $subject unless -d $subject;

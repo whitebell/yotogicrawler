@@ -61,7 +61,7 @@ foreach my $c (keys %$comp) {
             die unless $path =~ m/key=(\d+)/;
             my $key = $1;
             if (exists $cache->{$path}) {
-                if ($cache->{$path}{title} ne $title or $cache->{$path}{comments} ne $comments or ($update and $cache->{$path}{update} ne $update)) {
+                if ($cache->{$path}{title} ne $title || $cache->{$path}{comments} ne $comments || ($update and $cache->{$path}{update} ne $update)) {
                     say encode('cp932', $title);
                     sleep 5;
                     save($path, "./$comp->{$c}{dir}/$key.html"); ###
