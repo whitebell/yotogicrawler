@@ -26,7 +26,7 @@ perl comp.pl
 
 で全部回収します。comp1～14.json, cache.json は更新確認用のキャッシュなので削除しないこと。更新があれば同じコマンド実行してやればキャッシュ確認した上で新規・更新作品だけ回収します。
 
-夜伽話回収時にターミナルが文字化けするなら yotogi.json の `term_encoding` を変えてみるといいかも。Windowsなら `cp932`、あとは `utf8` とか。古いLinuxだと `eucjp` とかまだあるかもしれないけど。
+回収時にターミナルが文字化けするなら config.json の `term_encoding` を変えてみるといいかも。Windowsなら `cp932`、あとは `utf8` とか。太古の化石Linuxだと `eucjp` とかまだあるかもしれないけど。
 
 ## License
 

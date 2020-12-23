@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use utf8;
 use 5.32.0;
-use version; our $VERSION = version->declare('v1.0.5');
+use version; our $VERSION = version->declare('v1.0.6');
 
 use Encode qw/encode/;
 use File::Slurp qw/read_file/;
@@ -24,7 +24,7 @@ my $ua = LWP::UserAgent->new(
     cookie_jar => HTTP::Cookies->new,
 );
 
-my $tenc = $ytg->{term_encoding} || (($^O eq 'MSWin32' || $^O eq 'dos') ? 'cp932' : 'utf8');
+my $tenc = $conf->{term_encoding} || (($^O eq 'MSWin32' || $^O eq 'dos') ? 'cp932' : 'utf8');
 
 my $subject = 0;
 do {

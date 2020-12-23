@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use utf8;
 use 5.32.0;
-use version; our $VERSION = version->declare('v1.0.2');
+use version; our $VERSION = version->declare('v1.0.6');
 
 use Encode qw/encode decode/;
 use File::Slurp qw/read_file/;
@@ -20,6 +20,8 @@ my $ua = LWP::UserAgent->new(
     agent => $conf->{userAgent} || "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko",
     cookie_jar => HTTP::Cookies->new,
 );
+
+my $tenc = $conf->{term_encoding} || (($^O eq 'MSWin32' || $^O eq 'dos') ? 'cp932' : 'utf8');
 
 foreach my $c (keys %$comp) {
     say $c;
@@ -62,7 +64,7 @@ foreach my $c (keys %$comp) {
             my $key = $1;
             if (exists $cache->{$path}) {
                 if ($cache->{$path}{title} ne $title || $cache->{$path}{comments} ne $comments || ($update and $cache->{$path}{update} ne $update)) {
-                    say encode('cp932', $title);
+                    say encode($tenc, $title);
                     sleep 5;
                     save($path, "./$comp->{$c}{dir}/$key.html"); ###
                     $cache->{$path}->@{qw/title author posting comments/} = ($title, $author, $posting, $comments);
@@ -70,7 +72,7 @@ foreach my $c (keys %$comp) {
                 }
             }
             else {
-                say encode('cp932', $title);
+                say encode($tenc, $title);
                 sleep 5;
                 save($path, "./$comp->{$c}{dir}/$key.html"); ###
                 $cache->{$path}->@{qw/title author posting comments/} = ($title, $author, $posting, $comments);
