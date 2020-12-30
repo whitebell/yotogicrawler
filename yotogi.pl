@@ -4,11 +4,12 @@ use strict;
 use warnings;
 use utf8;
 use 5.32.0;
-use version; our $VERSION = version->declare('v1.0.6');
+use version; our $VERSION = version->declare('v1.0.7');
 
 use Encode qw/encode/;
 use File::Slurp qw/read_file/;
 use HTTP::Cookies;
+use HTTP::Status qw/:constants/;
 use JSON::XS qw/decode_json/;
 use LWP::UserAgent;
 use Text::CSV_XS qw/csv/;
@@ -30,7 +31,13 @@ my $subject = 0;
 do {
     say "subject: $subject";
     sleep 3;
-    my $res = $ua->get("http://easy2life.sakura.ne.jp/yotogi2/index.php/$subject.csv");
+    my $t = 0;
+    my $res; # HTTP::Response
+    do {
+        say "  Retry $t" if $t;
+        sleep $t++ * 3;
+        $res = $ua->get("http://easy2life.sakura.ne.jp/yotogi2/index.php/$subject.csv");
+    } until ($res->is_success || $res->code != HTTP_SERVICE_UNAVAILABLE || $t == 11);
     if ($res->is_success) {
         my $content = $res->content;
 
@@ -76,6 +83,9 @@ do {
             }
         }
     }
+    else {
+        warn $res->status_line;
+    }
 } while ($subject-- > 1);
 
 open my $json, '>', $ytg->{cache} or die $!;
@@ -96,10 +106,19 @@ exit;
 
 sub save {
     my ($uri, $file) = @_;
-    my $res = $ua->get($uri);
+    my $t = 0;
+    my $res; # HTTP::Response
+    do {
+        say "  Retry $t" if $t;
+        sleep $t++ * 3;
+        $res = $ua->get($uri);
+    } until ($res->is_success || $res->code != HTTP_SERVICE_UNAVAILABLE || $t == 11);
     if ($res->is_success) {
         open my $fh, '>', $file or die;
         print $fh $res->content;
         close $fh;
+    }
+    else {
+        warn $res->status_line;
     }
 }

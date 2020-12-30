@@ -4,12 +4,13 @@ use strict;
 use warnings;
 use utf8;
 use 5.32.0;
-use version; our $VERSION = version->declare('v1.0.6');
+use version; our $VERSION = version->declare('v1.0.7');
 
 use Encode qw/encode decode/;
 use File::Slurp qw/read_file/;
 use HTML::TreeBuilder::XPath;
 use HTTP::Cookies;
+use HTTP::Status qw/:constants/;
 use JSON::XS qw/decode_json/;
 use LWP::UserAgent;
 
@@ -33,7 +34,13 @@ foreach my $c (keys %$comp) {
     my $uri = URI->new($comp->{$c}{uri});
 
     sleep 3;
-    my $res = $ua->get($uri);
+    my $t = 0;
+    my $res;
+    do {
+        say "  Retry $t" if $t;
+        sleep $t++ * 3;
+        $res = $ua->get($uri);
+    } until ($res->is_success || $res->code != HTTP_SERVICE_UNAVAILABLE || $t == 11);
     if ($res->is_success) {
         open my $fh, '>', "./$comp->{$c}{dir}/index.html" or die $!; ###
         print $fh $res->content;
@@ -80,6 +87,9 @@ foreach my $c (keys %$comp) {
             }
         }
     }
+    else {
+        warn $res->status_line;
+    }
 
     open my $json, '>', $comp->{$c}{cache} or die $!;
     print $json JSON::XS->new->pretty(1)->canonical(1)->utf8->encode($cache);
@@ -94,10 +104,19 @@ sub trim {
 
 sub save {
     my ($uri, $file) = @_;
-    my $res = $ua->get($uri);
+    my $t = 0;
+    my $res; # HTTP::Response
+    do {
+        say "  Retry $t" if $t;
+        sleep $t++ * 3;
+        $res = $ua->get($uri);
+    } until ($res->is_success || $res->code != HTTP_SERVICE_UNAVAILABLE || $t == 11);
     if ($res->is_success) {
         open my $fh, '>', $file or die;
         print $fh $res->content;
         close $fh;
+    }
+    else {
+        warn $res->status_line;
     }
 }
