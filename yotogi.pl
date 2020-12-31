@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use utf8;
 use 5.32.0;
-use version; our $VERSION = version->declare('v1.0.7');
+use version; our $VERSION = version->declare('v1.0.8');
 
 use Encode qw/encode/;
 use File::Slurp qw/read_file/;

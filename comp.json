@@ -188,5 +188,18 @@
 			"update"   : "./td[4]/text()",
 			"comments" : "./td[5]/text()"
 		}
+	},
+	"otokogi" : {
+		"uri"      : "http://yotogi.com/otokogi/",
+		"cache"    : "otokogi.json",
+		"dir"      : "otokogi",
+		"xpath"    : {
+			"nodeset"  : "//table[@class='subjects']//tr[child::td]",
+			"title"    : "./td[1]/a/text()",
+			"path"     : "./td[1]/a/@href",
+			"author"   : "./td[2]/text()",
+			"posting"  : "./td[3]/text()",
+			"comments" : "./td[4]/text()"
+		}
 	}
 }
